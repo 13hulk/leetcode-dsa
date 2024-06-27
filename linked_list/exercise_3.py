@@ -11,9 +11,18 @@ class LinkedList:
         self.tail = _new_node
         self.length = 1
 
+    def print_linked_list(self):
+        _temp = self.head
+        while _temp is not None:
+            print(_temp.value)
+            _temp = _temp.next
 
-my_linked_list = LinkedList(4)
 
-print("Head:", my_linked_list.head.value)
-print("Tail:", my_linked_list.tail.value)
-print("Length:", my_linked_list.length)
+if __name__ == "__main__":
+    ll = LinkedList(4)
+
+    print("Head:", ll.head.value)
+    print("Tail:", ll.tail.value)
+    print("Length:", ll.length)
+
+    ll.print_linked_list()
