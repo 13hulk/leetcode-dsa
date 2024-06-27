@@ -7,6 +7,7 @@ class Node:
 class LinkedList:
     def __init__(self, value):
         _new_node = Node(value)
+
         self.head = _new_node
         self.tail = _new_node
         self.length = 1
@@ -16,6 +17,19 @@ class LinkedList:
         while _temp is not None:
             print(_temp.value)
             _temp = _temp.next
+
+    def append(self, value):
+        _new_node = Node(value)
+
+        if self.head is None:
+            self.head = _new_node
+        else:
+            self.tail.next = _new_node
+
+        self.tail = _new_node
+        self.length += 1
+
+        return True
 
 
 if __name__ == "__main__":
