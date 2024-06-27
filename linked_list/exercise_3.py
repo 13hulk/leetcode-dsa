@@ -13,6 +13,13 @@ class LinkedList:
         self.length = 1
 
     def print_linked_list(self):
+        print(
+            "\nLinkedList"
+            + f"\nHead: {ll.head.value}"
+            + f" | Tail: {ll.tail.value}"
+            + f" | Length: {ll.length}"
+        )
+
         _temp = self.head
         while _temp is not None:
             print(_temp.value)
@@ -34,9 +41,7 @@ class LinkedList:
 
 if __name__ == "__main__":
     ll = LinkedList(4)
+    ll.print_linked_list()
 
-    print("Head:", ll.head.value)
-    print("Tail:", ll.tail.value)
-    print("Length:", ll.length)
-
+    ll.append(10)
     ll.print_linked_list()
