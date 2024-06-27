@@ -73,5 +73,5 @@ if __name__ == "__main__":
     ll.append(15)
     ll.print_linked_list()
 
-    gll.pop()
+    ll.pop()
     ll.print_linked_list()
