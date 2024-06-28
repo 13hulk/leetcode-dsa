@@ -40,10 +40,11 @@ class LinkedList:
 
         if self.head is None:
             self.head = new_node
+            self.tail = new_node
         else:
             self.tail.next = new_node
+            self.tail = new_node
 
-        self.tail = new_node
         self.length += 1
 
         self.print_linked_list()
@@ -51,13 +52,13 @@ class LinkedList:
         return True
 
     def pop(self):
-        print("\nPopping last item..")
+        print("\nPopping the last item..")
 
         if self.head is None:
             raise ValueError("LinkedList is empty")
 
         elif self.head == self.tail:
-            popped = self.tail
+            popped = self.tail.value
             self.tail = None
             self.head = None
             self.length = 0
@@ -67,15 +68,14 @@ class LinkedList:
             while new_tail.next != self.tail:
                 new_tail = new_tail.next
 
+            popped = new_tail.next.value
             self.tail = new_tail
             self.tail.next = None
             self.length -= 1
 
-            popped = new_tail
-
         self.print_linked_list()
-        print(f"Pop successful: {popped.value}")
-        return popped.value
+        print(f"Pop was successful: {popped}")
+        return popped
 
 
 if __name__ == "__main__":
